@@ -1,0 +1,6 @@
+[submodule "gsi-website"]
+	path = gsi-website
+	url = https://github.com/oicr-gsi/gsi-website.git
+[submodule "bamqc"]
+	path = bamqc
+	url = https://github.com/oicr-gsi/bamqc.git

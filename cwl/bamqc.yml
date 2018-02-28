@@ -1,0 +1,11 @@
+samtools: samtools
+bamfile: 
+  class: File
+  path: /Users/mtaschuk/git/one-workflow-many-ways/bamqc/t/test/neat_5x_EX_hg19_chr21.bam
+bamqc_pl:
+  class: File
+  path: /Users/mtaschuk/git/one-workflow-many-ways/bamqc/bamqc.pl
+bedfile:
+  class: File
+  path: /Users/mtaschuk/git/one-workflow-many-ways/bamqc/t/test/SureSelect_All_Exon_V4_Covered_Sorted_chr21.bed
+
