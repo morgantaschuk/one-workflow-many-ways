@@ -3,6 +3,7 @@ sudo: false
 
 env:
 - LAUNCH_SCRIPT='run_cromwell.sh'
+- LAUNCH_SCRIPT='run_cwltool.sh'
 
 jdk:
 - oraclejdk8
