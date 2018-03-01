@@ -14,6 +14,7 @@ before_install:
 - sudo apt-get install -qq samtools
 
 install: 
+- perlbrew switch perl-5.24.0
 - git submodule update --init --recursive
 - cd gsi-website && perl Makefile.PL && make && make test && make install && cd ..
 - cd bamqc && perl Makefile.PL && make && make test && make install && cd ..
