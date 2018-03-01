@@ -13,7 +13,7 @@ before_install:
 
 install: 
 - cd gsi-website && perl Makefile.PL && make && make test && sudo make install && cd ..
-- cd bamqc && cpanm --installdeps . && perl Makefile.PL && make && make test && sudo make install && cd ..
+- cd bamqc && cpanm --installdeps --sudo . && perl Makefile.PL && make && make test && sudo make install && cd ..
 
 
 script:
