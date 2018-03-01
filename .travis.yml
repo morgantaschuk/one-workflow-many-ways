@@ -12,8 +12,9 @@ before_install:
 - sudo apt-get install -qq samtools
 
 install: 
-- git submodule update --init --recursive
-- cd gsi-website && perl Makefile.PL && make && make test && make install && cd ..
-- cd bamqc && perl Makefile.PL && make && make test && make install && cd ..
+- cd gsi-website && perl Makefile.PL && make && make test && sudo make install && cd ..
+- cd bamqc && perl Makefile.PL && make && make test && sudo make install && cd ..
 
 
+script:
+- bash "${LAUNCH_SCRIPT}"
