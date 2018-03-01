@@ -1,5 +1,5 @@
 dist: trusty
-sudo: false
+sudo: true
 
 env:
 - LAUNCH_SCRIPT='run_cromwell.sh'
@@ -17,4 +17,3 @@ install:
 - cd bamqc && perl Makefile.PL && make && make test && make install && cd ..
 
 
-script:
