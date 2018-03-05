@@ -1,0 +1,12 @@
+bamfile: 
+  class: File
+  path: REPLACEME/bamqc/t/test/neat_5x_EX_hg19_chr21.bam
+bamqc_pl:
+  class: File
+  path: REPLACEME/bamqc/bamqc.pl
+bedfile:
+  class: File
+  path: REPLACEME/bamqc/t/test/SureSelect_All_Exon_V4_Covered_Sorted_chr21.bed
+flagstat2json:
+  class: File
+  path: REPLACEME/flagstat2json.sh

@@ -3,9 +3,17 @@ cwlVersion: v1.0
 doc: "Run bamqc"
 requirements:
   - class: ShellCommandRequirement
+
+
+hints:
+  SoftwareRequirement:
+    packages:
+      samtools:
+        specs: [ "https://identifiers.org/rrid/RRID:SCR_002105" ]
+        version: [ "0.1.19+" ]
+
+
 inputs:
-  samtools:
-    type: string
   bamfile:
     type: File
   bamqc_pl:
@@ -17,13 +25,13 @@ inputs:
     inputBinding:
       position: 1
 
-stdout: thing.json
+stdout: bamqc_result.json
 outputs:
   outjson:
     type: stdout
 
 arguments:
-  - {valueFrom: $(inputs.samtools)}
+  - samtools
   - view
   - {valueFrom: $(inputs.bamfile)}
   - {valueFrom: " | ", shellQuote: false}
