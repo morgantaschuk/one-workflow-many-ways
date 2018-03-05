@@ -16,6 +16,9 @@ outputs:
   bamqc_json:
     type: File
     outputSource: bamqc/outjson
+  flagstatjson:
+    type: File
+    outputSource: flagstat_json/flagstat_json
 
 steps:
   flagstat:

@@ -10,7 +10,7 @@ FLAGSTAT=""
 #read in either from a file or stdin
 while read line
 do
-   FLAGSTAT="${FLAGSTAT}$(echo $line | perl -pe 's|(\d+ \+ \d+)\s+(.*)\R|"$2": "$1",|g')"
+   FLAGSTAT="${FLAGSTAT}$(echo $line | perl -pe 's|(\d+ \+ \d+)\s+(.*)\R|"flagstat.$2": "$1",|g')"
 done < "${1:-/dev/stdin}"
 
 #trim the last comma

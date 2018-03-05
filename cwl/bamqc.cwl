@@ -23,6 +23,7 @@ inputs:
   xtra_json:
     type: File?
     inputBinding:
+      prefix: -j
       position: 1
 
 stdout: bamqc_result.json
