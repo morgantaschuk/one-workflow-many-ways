@@ -20,7 +20,7 @@ task flagstat {
     String outfile="flagstat.json"
 
     command {
-        bash ${flagstat_to_json} ${samtools} ${bamfile} > ${outfile}
+        ${samtools} flagstat ${bamfile} | ${flagstat_to_json} > ${outfile}
     }
 
     output {
