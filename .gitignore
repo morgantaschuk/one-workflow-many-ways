@@ -3,3 +3,5 @@ cwl/local_workflow.yml
 wdl/local_bamqc_inputs.json
 venv
 bamqc_result.json
+out_*
+toil*
