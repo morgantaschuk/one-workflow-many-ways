@@ -7,8 +7,7 @@ set -eo pipefail
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # requires Java JDK8
-sudo apt-get install -qq oracle-java8-installer
-jdk_switcher use oraclejdk8
+sudo apt-get install -qq oracle-java8-installer oracle-java8-set-default
 # get cromwell if necessary
 if [ ! -f cromwell-30.2.jar ]; then
     wget 'https://github.com/broadinstitute/cromwell/releases/download/30.2/cromwell-30.2.jar'
