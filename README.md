@@ -16,9 +16,16 @@ So far I have the following implemented:
 - bash run with bash
 - [Workflow Description Language (WDL)](https://software.broadinstitute.org/wdl/) run with [Cromwell](http://cromwell.readthedocs.io/en/develop/)
 - [common workflow language (CWL)](https://github.com/common-workflow-language/common-workflow-language) run with [cwltool](https://github.com/common-workflow-language/cwltool)
-
+- [common workflow language (CWL)](https://github.com/common-workflow-language/common-workflow-language) run with [Toil](https://toil.readthedocs.io)
+- WDL with Toil: broken, see the wiki for details
 
 See the last runs here: [![Build Status](https://travis-ci.org/morgantaschuk/one-workflow-many-ways.svg)](https://travis-ci.org/morgantaschuk/one-workflow-many-ways) https://travis-ci.org/morgantaschuk/one-workflow-many-ways
+
+## Download
+
+To clone this repository and get all the submodules
+
+    git clone --recurse-submodules git@github.com:morgantaschuk/one-workflow-many-ways.git
 
 ## Requirements
 
@@ -29,9 +36,34 @@ This is only required if you plan to run this on your own machine. Most of the t
 * R-base
 * bamqc and gsi-website (git submodules) installed
 
-To get all the submodules
+## Run
 
-    git clone --recurse-submodules git@github.com:morgantaschuk/one-workflow-many-ways.git
+Setup: `bash replacepaths.sh`
+
+Then launch any of the `run_X.sh` commands. They take no arguments
+
+**Bash**
+
+    bash run_bash.sh
+
+**CWL on cwltool**
+
+    bash run_cwltool.sh
+
+**WDL on Cromwell**
+
+    bash run_cromwell.sh
+
+**CWL on Toil**
+
+    bash run_toil_cwl.sh
+
+
+## Clean up all the things
+
+The various workflow systems produces a *lot* of files in this directory. To torch 'em all, use:
+
+    git clean -f -x
 
 To refresh the submodules after something messes with them
 
