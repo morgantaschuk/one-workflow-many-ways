@@ -7,15 +7,15 @@ set -eo pipefail
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # requires Java JDK8
-sudo apt-get install -qq oracle-java8-installer oracle-java8-set-default
+# https://stackoverflow.com/questions/7334754/correct-way-to-check-java-version-from-bash-script
+JAVA_VER=$(java -version 2>&1 | sed -n ';s/.* version "\(.*\)\.\(.*\)\..*"/\1\2/p;')
+if [ ! "$JAVA_VER" -ge 18 ]; then 
+    sudo apt-get install -qq oracle-java8-installer oracle-java8-set-default
+fi
 # get cromwell if necessary
 if [ ! -f cromwell-30.2.jar ]; then
     wget 'https://github.com/broadinstitute/cromwell/releases/download/30.2/cromwell-30.2.jar'
 fi
-
-# cromwell needs absolute paths, so replace the paths in the json file
-perl -p -e "s|REPLACEME|${DIR}|g" "${DIR}/wdl/bamqc_inputs.json" > "${DIR}/wdl/local_bamqc_inputs.json"
-
 
 java -jar cromwell-30.2.jar run -i "${DIR}/wdl/local_bamqc_inputs.json" "${DIR}/wdl/bamqc.wdl"
 
