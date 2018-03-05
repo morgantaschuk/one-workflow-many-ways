@@ -5,6 +5,8 @@ env:
 - LAUNCH_SCRIPT='run_cromwell.sh'
 - LAUNCH_SCRIPT='run_cwltool.sh'
 - LAUNCH_SCRIPT='run_bash.sh'
+- LAUNCH_SCRIPT='run_toil_cwl.sh'
+- LAUNCH_SCRIPT='run_toil_wdl.sh'
 
 before_install:
 - sudo apt-get update -qq
