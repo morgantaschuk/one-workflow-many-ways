@@ -6,7 +6,7 @@ Implementing bamqc over and over again to get an idea of how easy or hard it is 
 1. Run `samtools flagstat` and perform some command-line operations to turn it into a JSON file
 2. Run `bamqc.pl`, a script we created in-house, in order to pull some stats about a BAM file. This step also takes in the JSON from the first step and includes it in the results.
 
-An example result file is here: [results/neat_5x_EX_hg19_chr21.json](neat_5x_EX_hg19_chr21.json).
+An example result file is here: [results/neat_5x_EX_hg19_chr21.json](results/neat_5x_EX_hg19_chr21.json).
 
 ## Continuous Integration Misused
 
