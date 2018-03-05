@@ -37,3 +37,6 @@ To refresh the submodules after something messes with them
 
     git submodule update --remote bamqc gsi-website
 
+# Thoughts and Results
+
+Check the wiki: https://github.com/morgantaschuk/one-workflow-many-ways/wiki
