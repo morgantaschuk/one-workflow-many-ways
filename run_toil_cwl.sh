@@ -3,7 +3,7 @@
 set -eo pipefail
 
 # install cwltool
-virtualenv -p python3 venv
+virtualenv -p python2 venv
 source venv/bin/activate
 pip install 'toil[cwl]'
 

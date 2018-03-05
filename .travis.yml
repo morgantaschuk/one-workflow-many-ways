@@ -2,11 +2,18 @@ dist: trusty
 sudo: false
 
 env:
-- LAUNCH_SCRIPT='run_cromwell.sh'
-- LAUNCH_SCRIPT='run_cwltool.sh'
-- LAUNCH_SCRIPT='run_bash.sh'
-- LAUNCH_SCRIPT='run_toil_cwl.sh'
-- LAUNCH_SCRIPT='run_toil_wdl.sh'
+  global:
+    - R_LIB_USER=$HOME/R/Library
+  matrix:
+    - LAUNCH_SCRIPT='run_cromwell.sh'
+    - LAUNCH_SCRIPT='run_cwltool.sh'
+    - LAUNCH_SCRIPT='run_bash.sh'
+    - LAUNCH_SCRIPT='run_toil_cwl.sh'
+
+cache:
+  directories:
+    - $HOME/R/Library
+    - perl_modules
 
 before_install:
 - sudo apt-get update -qq
