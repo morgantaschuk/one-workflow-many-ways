@@ -5,3 +5,4 @@ venv
 bamqc_result.json
 out_*
 toil*
+seqware/target

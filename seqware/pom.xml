@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>ca.on.oicr.pde.config</groupId>
+        <artifactId>workflows</artifactId>
+        <version>3.1</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>one-workflow-many-ways</groupId>
+    <artifactId>workflow-bam-qc</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+
+    <name>${display-name}</name>
+
+    <properties>
+        <workflow-name>BamQC</workflow-name>
+        <samtools-version>0.1.19</samtools-version>
+
+    </properties>
+
+    <repositories>
+        <repository>
+          <id>dependencies.com.github.seqware</id>
+          <name>SeqWare Dependencies Maven Repository</name>
+          <url>https://seqwaremaven.oicr.on.ca/artifactory/seqware-dependencies</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>samtools</groupId>
+            <artifactId>samtools</artifactId>
+            <version>${samtools-version}</version>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>ca.on.oicr.pde</groupId>
+            <artifactId>common-utilities</artifactId>
+            <version>1.6.5</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    
+</project>
