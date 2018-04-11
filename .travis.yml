@@ -19,6 +19,7 @@ cache:
   directories:
     - $HOME/R/Library
     - perl_modules
+    - $HOME/.m2
 
 before_install:
 - sudo apt-get update -qq
